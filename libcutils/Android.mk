@@ -55,31 +55,12 @@ commonSources := \
 commonHostSources := \
         ashmem-host.c
 
-# some files must not be compiled when building against Mingw
-# they correspond to features not used by our host development tools
-# which are also hard or even impossible to port to native Win32
-WINDOWS_HOST_ONLY :=
-ifeq ($(HOST_OS),windows)
-    ifeq ($(strip $(USE_CYGWIN)),)
-        WINDOWS_HOST_ONLY := 1
-    endif
-endif
-# USE_MINGW is defined when we build against Mingw on Linux
-ifneq ($(strip $(USE_MINGW)),)
-    WINDOWS_HOST_ONLY := 1
-endif
-
-ifeq ($(WINDOWS_HOST_ONLY),1)
-    commonSources += \
-        uio.c
-else
-    commonSources += \
-        abort_socket.c \
-        fs.c \
-        selector.c \
-        multiuser.c \
-        zygote.c
-endif
+commonSources += \
+    abort_socket.c \
+    fs.c \
+    selector.c \
+    multiuser.c \
+    zygote.c
 
 
 # Static library for host
