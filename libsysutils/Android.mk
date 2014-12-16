@@ -11,8 +11,7 @@ LOCAL_SRC_FILES:=                             \
                   src/NetlinkEvent.cpp        \
                   src/FrameworkCommand.cpp    \
                   src/SocketClient.cpp        \
-                  src/ServiceManager.cpp      \
-                  EventLogTags.logtags
+                  src/ServiceManager.cpp
 
 LOCAL_MODULE:= libsysutils
 
