@@ -120,6 +120,7 @@ endif # !x86-atom
 endif # !arm
 
 LOCAL_C_INCLUDES := $(libcutils_c_includes) $(KERNEL_HEADERS) $(LOCAL_PATH)/../include/
+LOCAL_EXPORT_C_INCLUDES = $(LOCAL_PATH)/../include
 LOCAL_STATIC_LIBRARIES := liblog_static
 LOCAL_CFLAGS += $(targetSmpFlag) $(CUTILS_CFLAGS)
 include $(BUILD_STATIC_LIBRARY)
@@ -130,6 +131,7 @@ LOCAL_WHOLE_STATIC_LIBRARIES := libcutils_static
 LOCAL_SHARED_LIBRARIES := liblog
 LOCAL_CFLAGS += $(targetSmpFlag)
 LOCAL_C_INCLUDES := $(libcutils_c_includes)
+LOCAL_EXPORT_C_INCLUDES = $(LOCAL_PATH)/../include
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
